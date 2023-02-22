@@ -37,35 +37,47 @@ function btnClicked() {
 }
 
 // Menu Option Functions
-function traverseSurveyData() {
-  // Traverse the surveyData array to:
-  // Count the number of "Yes" responses,
-  // Count the number of "No" responses,
-  // Count the number of "Maybe" responses,
-  // and output the results in the outputEl.
+let yCount = 0;
+let nCount = 0;
+let mCount = 0;
 
-  outputEl.innerHTML = "Survey Data";
+function traverseSurveyData() {
+  for (let i = 0; i < surveyData.length; i++) {
+    if (surveyData[i] === "Yes") {
+      yCount++;
+    } else if (surveyData[i] === "No") {
+      nCount++;
+    } else if (surveyData[i] === "Maybe") {
+      mCount++;
+    }
+  }
+  outputEl.innerHTML = `<p>Yes: ${yCount} No: ${nCount} Maybe: ${mCount}</p>`;
   console.log(surveyData);
 }
 
-function traverseAgeData() {
-  // Traverse the ageData array to:
-  // Count the number of ages under 18,
-  // Count the number of ages between 18 and 35, inclusive
-  // Count the number of ages between 36 and 65, inclusive
-  // Count the number of ages above 65,
-  // and output the results in the outputEl.
+let ACount = 0;
+let BCount = 0;
+let CCount = 0;
+let DCount = 0;
 
-  outputEl.innerHTML = "Age Data";
+function traverseAgeData() {
+  for (let i = 0; i < ageData.length; i++) {
+    if (ageData[i] < 18) {
+      ACount++;
+    } else if (ageData[i] >= 18 && ageData[i] <= 35) {
+      BCount;
+    } else if (ageData[i] >= 36 && ageData[i] <= 65) {
+      CCount;
+    } else {
+      DCount;
+    }
+  }
+
+  outputEl.innerHTML = `<p> Under 18: ${ACount}</p><p>18-35: ${BCount}</p><p>36-65: ${CCount}</p><p>65+: ${DCount}</p>`;
   console.log(ageData);
 }
 
 function traverseNumberData() {
-  // Traverse the numberData array to:
-  // Count the number of even numbers,
-  // Count the number of odd numbers,
-  // and output the results in the outputEl.
-
   outputEl.innerHTML = "Number Data";
   console.log(numberData);
 }
