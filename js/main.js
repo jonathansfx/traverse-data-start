@@ -65,11 +65,11 @@ function traverseAgeData() {
     if (ageData[i] < 18) {
       ACount++;
     } else if (ageData[i] >= 18 && ageData[i] <= 35) {
-      BCount;
+      BCount++;
     } else if (ageData[i] >= 36 && ageData[i] <= 65) {
-      CCount;
+      CCount++;
     } else {
-      DCount;
+      DCount++;
     }
   }
 
@@ -77,7 +77,17 @@ function traverseAgeData() {
   console.log(ageData);
 }
 
+let Y = 0;
+let X = 0;
+
 function traverseNumberData() {
-  outputEl.innerHTML = "Number Data";
+  for (let i = 0; i < numberData.length; i++) {
+    if (numberData[i] % 2 == 0) {
+      X++;
+    } else {
+      Y++;
+    }
+  }
+  outputEl.innerHTML = `<p>Even: ${X}</p> <p>Odd: ${Y}</p>`;
   console.log(numberData);
 }
