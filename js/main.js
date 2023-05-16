@@ -43,11 +43,11 @@ let mCount = 0;
 
 function traverseSurveyData() {
   for (let i = 0; i < surveyData.length; i++) {
-    if (surveyData[i] === "Yes") {
+    if (surveyData[i] == "Yes") {
       yCount++;
-    } else if (surveyData[i] === "No") {
+    } else if (surveyData[i] == "No") {
       nCount++;
-    } else if (surveyData[i] === "Maybe") {
+    } else if (surveyData[i] == "Maybe") {
       mCount++;
     }
   }
